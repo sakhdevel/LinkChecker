@@ -1,0 +1,15 @@
+version: "2"
+services:
+  mysql:
+    container_name: link_checker_mysql
+    image: "mariadb:10.1"
+    restart: always
+    volumes:
+      - ./data/docker/mysql:/var/lib/mysql
+    ports:
+      - "127.0.1.103:3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootPassword
+      MYSQL_DATABASE: link_checker
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userPassword
